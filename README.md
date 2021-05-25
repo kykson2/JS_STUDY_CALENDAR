@@ -2,7 +2,8 @@
 JS로 테이블을 만들고 tr , td 테그 사용 
 createTextNode로 td안에 String을 넣음 
 
-JS_STUDY-CALENDAR 21.05.26 /n
+JS_STUDY-CALENDAR 21.05.26 
+
 이번 달 날짜들을 출력(지난 달의 일정 날짜까지 보이게끔) 
 
 to do list 
