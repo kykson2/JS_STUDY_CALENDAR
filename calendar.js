@@ -1,19 +1,19 @@
 const table = document.getElementById("js-calendar");
 
-function lastMonth(event){
-    event.preventDefault();
-    const today = new Date();
-    let year = today.getFullYear();
-    let month = today.getMonth()+1;
-    if(month===0){
-        month = 12;
-        year -= 1;
-    } else{
-        month -= 1;
-    }
-    console.log(month);
-    thisDays(year,month);
-}
+// function lastMonth(event){
+//     event.preventDefault();
+//     const today = new Date();
+//     let year = today.getFullYear();
+//     let month = today.getMonth()+1;
+//     if(month===0){
+//         month = 12;
+//         year -= 1;
+//     } else{
+//         month -= 1;
+//     }
+//     console.log(month);
+//     thisDays(year,month);
+// }
 
 // 요일에 맞게 날짜 입력
 function thisDays(year, month){    
@@ -69,7 +69,7 @@ function showYM(){
     let month = today.getMonth()+1;
 
     let yearsAndMonth = `${year}年 - ${month}月`;
-    thisDays(year, month);
+    // thisDays(year, month);
     return yearsAndMonth;
 }
 
@@ -77,7 +77,7 @@ function getToday(){
     const today = new Date();
     const year = today.getFullYear();
     const month = today.getMonth()+1;
-    //thisDays(year, month); // 이번달 날짜 불러오는 함수
+    thisDays(year, month); // 이번달 날짜 불러오는 함수
 }
 
 function dayOfTheWeek(){
@@ -118,8 +118,8 @@ function changeMonthAndYear(){
     postBtn.innerText = ">";
     
     td_prevBtn.appendChild(prevBtn);
-    prevBtn.addEventListener("click",lastMonth);
-    td_YM.appendChild(document.createTextNode(showYM.yearsAndMonth));
+    //prevBtn.addEventListener("click",lastMonth);
+    td_YM.appendChild(document.createTextNode(showYM()));
     td_YM.id = "YM";
     td_postBtn.appendChild(postBtn);
     tr.appendChild(td_prevBtn);
@@ -128,7 +128,7 @@ function changeMonthAndYear(){
     tr.id = "changeYM";
     table.appendChild(tr);
     dayOfTheWeek();
-    //getToday();
+    getToday();
 }
 
 function init(){
